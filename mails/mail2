@@ -1,0 +1,14 @@
+
+
+# inconsistencies in the data.
+bu3dfe/png_files/M0030_FE03_F3D.png is missing data and does not have FE03
+
+
+This week has been focusing on getting the whole dataset encoded.
+I had some problems with doing it Colab with diskspace and Google quatalimits.
+
+I know have access to both a workstation and the HPC cluster at
+
+
+CUDA 9.0
+cuDNN 7.3.1

@@ -1,0 +1,48 @@
+Hi Sami and Stella
+
+Here is a small update on the thesis.
+
+#Encoding
+I've changed the encoding into StyleGAN latent space (W) to use a mask
+so the background is not considered when optimizing for the latent code.
+This means that StyleGAN "guesses" the background when we do not constrain it to
+be all black. The results are quite good for 100 iteration steps for the first two person identities
+in the dataset. See the original data in figure1 and the reconstructions in figure2.
+
+In figure 3 you see the mean face of these 2*50 data points and figure 4 the reconstruction
+from the left and right perspective also.
+
+# Decomposition
+I found a way to do MLSVD/HOSVD/Tucker decomposition in Python:
+I can do the decomposition with TensorFox https://github.com/felipebottega/Tensor-Fox
+And doing the n-way products with https://github.com/tensorly/tensorly
+
+So I have our data tensor T decomposed as T = S x U1 x U2 X U3.
+Currently I construct T as you do in the paper as as a order 3 tensor in R^ W x P x E
+where W = 18*512 latent code, P = 100 identities, E = 25 expressions
+
+I've also implemented another way of structuring the tensor.
+Here I split expression and intensity and add viewpoint since we have
+3 perspectives for each data point.
+This way we would have that T is of order 5 with dimensions
+W (18*512) x Persons(100) x expressions(6) x intensities(4) x viewpoints (3)
+But then it is not unambiguous where one would place the neutral faces.
+Let me know what you think :)
+In figure 6-8 i play around with the HOSVD of this tensor where
+can define the mean view and mean expression and so on.
+We can also do linear interpolation as in figure 5.
+
+# Reconstruction
+Now having the decomposition the next step would be to do expression
+transfer to an image outside the dataset. In "Apathy" you estimate the
+person and expression parameters.
+
+To do this you construct the energy functional which for the tensor I mention in
+the second case would have 4 parameters instead of two.
+
+You use the diagonal Tikhonov regulariser and pose the problem as a
+regularised least squares problem, and minimize using alternating least squares.
+I don't know what the sentence above means yet and this is where I'm "stuck" at the moment :)
+Do you have any good resources for solving regularised least squares problems?
+
+If this end up working I think that would be a novel technique for semantic editing in Stylegan.

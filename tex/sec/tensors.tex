@@ -1,0 +1,72 @@
+\chapter{Tensors}
+
+\section{Tensor algebra}
+
+A generalization of the product between two matrices are the product of a tensor and a matrix or vector. We can define the $n$-way tensor product between an $n$th order tensor $\mathcal{A}\in\mathbb{R}^{I_1\times\cdots\times I_n\times\cdots\times I_N}$ and a matrix $\mathbf{M}\in R^{j} $ as\cite{tensorface}
+
+\begin{align}
+\mathcal{B} = \mathcal{A}\times_n\mathbf{M}
+\end{align}
+Where the product is  tensor $\mathcal{B} \in \mathbb{R}^{i_1\times\cdots\times j \times\cdots\times i_N}$
+
+We can define mode-$n$ vectors as the column vectors of the matrix
+$\mathbf{A}_{(n)}\in\mathbb{R}^{I_1\times\cdots\times J \times\cdots\times I,N} $ \cite{tensorface}
+
+the $n$-rank $R_n$ is the dimension of the vector space spanned by the mode-$n$ vectors
+
+\begin{align}
+  R_n = \text{Rank}(\mathbf{A}_{(n)})
+\end{align}
+
+
+We can define en Inner Product of two tensors as
+\begin{align}
+  \left<\mathcal{Y},\mathcal{Y}\right> = x_{i_1,\cdots,i_n} y_{i_1,\cdots,i_n}
+\end{align}
+
+A tensor is \emph{rank one} if it can be written as an outer product of $n$ vectors $\mathbf{a}^(n)$
+\begin{align}
+  \mathcal{X} = \mathbf{a}^(1)\otimes,\cdots,\otimes,\mathbf{a}^(n)
+\end{align}
+
+
+
+\section{Tensor decomposition}
+
+
+\section{PCA and SVD}
+Given a matrix $\mathbf{X}\in\mathbb{R}^{n\times m}$ we can normalize is by subtracting the mean of the column vectors. Let $\mathbf{x}_i\in\mathbb{R}^{m}$ be the the $i$th column vector of $\mathbf{X}$. Let us define $\bar{\mathbf{X}}$ to be the matrix with columns
+\begin{align}
+  \bar{\mathbf{x}}_i = \mathbf{x}_i - \mu
+\end{align}
+where
+\begin{align}
+  \mu = \frac{1}{m}\sum_{j=1}^m \mathbf{x}_i
+\end{align}
+then the Covariance matrix $\mathbf{C} \in \mathbb{R}^{n\times n}$ can be written as
+\begin{align}
+  \mathbf{C} = \mathbf{X}\mathbf{X}^T
+\end{align}
+
+Principal component Analysis (PCA) is the eigenvalue decomposition of the Covariance matrix
+\begin{align}
+\mathbf{C} = \mathbf{U}\mathbf{S}\mathbf{U}^T
+\end{align}
+where $S=\text{Diag} = \{\lambda_1,\cdots,\lambda_n\}$ where $\lambda_n$ is the $n$th eigenvalue satisfying $\mathbf{C}\mathbf{u}_{n} = \lambda_n \mathbf{u}_{n}$
+
+Any matrix can be decomposed via its Singular Value Composition (SVD)
+The Rank of a matrix $\mathbf{M}$ is the minimum number of
+
+
+
+\section{HOSVD}
+
+Any Tensor $\mathcal{T} \in \mathbb{R}^{m_1\times m_2 \times \cdots \times n_M}$ of order $M$ can we factorized via it its Tucker decomposition.
+
+\begin{align}
+  \mathcal{T} = \mathcal{S} \times_1 \mathbf{U}^{(1)} \cdots  \times_n \mathbf{U}^{(1)} 
+\end{align}
+Where the tensor $\mathcal{S}$ is known as the \emph{core} tensor and is of the same order as $\mathcal{T}$
+
+
+We follow the convention to denote order 0 tensors (scalars) with lower case letters like $a,b,c \in \mathbb{R}$, we denote order 1 tensors (vectors) with lower case bold letters like $\mathbf{v},\mathbf{w},\mathbf{z} \in \mathbb{R}^{n}$, we use upper case bold for order 2 tensors (matrices)  $\mathbf{M},\mathbf{U},\mathbf{A} \in \mathbb{R}^{n\times m}$ and finally upper-case caligraphic style letters for any tensor of order larger than 2 which for which we will reserve the word tensor for now on.

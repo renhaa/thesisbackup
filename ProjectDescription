@@ -1,0 +1,44 @@
+Working Title:
+Exploring the latent space of StyleGAN for semantic face editing
+and expression transfer.
+
+
+Problemformulering:
+When filling out this project agreement, please take following points into consideration:
+To identify, define and delimit a problem within information technology.
+To identify and analyse relevant means for solving the problem, such as academic theories, methods, literature, tools and other sources, as well as existing solutions to the problem.
+To combine the selected means, develop them further if necessary, and apply them in a concerted effort towards the solution of the problem.
+To evaluate the achieved solution.
+To report in a coherent and stringent way the problem, the background research, the work towards the solution, the achieved solution, the evaluation, and other relevant material, while adhering to the academic standards.
+To reflect upon the problem, the chosen approach, the achieved solution, and other findings.
+
+#Working Title:
+Exploring the latent space of StyleGAN for semantic face editing
+and expression transfer.
+
+
+#Problem Formulation:
+Image synthesis in general and synthesis of human faces in particular
+has seen drastic improvements in recent years.
+
+Neural network architectures like Generative Adversarial Networks (GANs) are now able to
+generate photo realistic images of human faces.
+
+Despite the recent advances, relatively little is still know about the structure
+ of the latent space of these models.
+
+In this thesis we will use a detailed data set of human facial expressions to probe the structure
+of the latent space of the GAN architecture known as StyleGAN.
+
+We suspect that this model will enable a novel approach for semantic face editing
+and expression transfer in StyleGAN.
+We will compare the results from our model with existing approaches.
+
+We will use tensor decomposition methods to identify and explore the expression space of the dataset.
+Furthermore we will investigate if there exists a common origin for all expression in the StyleGAN latent space
+as was shown to be the case in related work.
+
+We will use the Python programming language and libraries like open source tensorflow and OpenCV.
+
+#What is begin delivered:
+Project Rapport and supporting code base.
